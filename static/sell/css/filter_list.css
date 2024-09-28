@@ -1,0 +1,116 @@
+/* Custom styling for the filter form and table */
+body {
+    background-color: #f8f9fa; /* Light gray background for the entire page */
+    font-family: 'Arial', sans-serif; /* Use a modern sans-serif font */
+}
+
+header {
+    margin-bottom: 20px;
+    background-color: #343a40; /* Dark header background */
+    color: #fff;
+}
+
+h1 {
+    text-align: center;
+    color: #343a40; /* Dark header text */
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+form {
+    background-color: #ffffff; /* White background for form */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+label {
+    font-weight: bold;
+    color: #6c757d;
+}
+
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.table {
+    background-color: #ffffff;
+    border-collapse: separate;
+    border-spacing: 0 10px; /* Space between rows */
+}
+
+.table th, .table td {
+    vertical-align: middle;
+    text-align: center;
+}
+
+thead {
+    background-color: #007bff;
+    color: #fff;
+}
+
+thead th {
+    padding: 15px;
+    font-size: 1.1rem;
+}
+
+tbody tr {
+    background-color: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Card-like shadow for rows */
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+img {
+    border-radius: 5px;
+    border: 1px solid #dee2e6;
+}
+.btn-info, .btn-warning, .btn-danger {
+    padding: 5px 15px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for hover */
+}
+
+.btn-info:hover, .btn-warning:hover, .btn-danger:hover {
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2); /* Slightly larger shadow on hover */
+    transform: translateY(-2px); /* Lift the button slightly on hover */
+}
+
+
+.container {
+    max-width: 1000px; /* Constrain the width of the content */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .form-control, .btn {
+        font-size: 0.9rem;
+    }
+
+    .table th, .table td {
+        font-size: 0.8rem;
+    }
+
+    .btn-info, .btn-warning, .btn-danger {
+        padding: 4px 10px;
+    }
+}

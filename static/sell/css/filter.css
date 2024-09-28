@@ -1,0 +1,63 @@
+/* General Form Styling */
+form {
+    background-color: #f8f9fa; /* Light gray background for the form */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow effect */
+    margin-bottom: 20px;
+}
+
+/* Input and Select Field Styling */
+input[type="text"], select {
+    border: 1px solid #ced4da; /* Light gray border for inputs */
+    border-radius: 4px; /* Rounded corners */
+    padding: 10px;
+    font-size: 16px;
+    background-color: #ffffff; /* White background */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
+    transition: all 0.3s ease; /* Smooth hover and focus transitions */
+}
+
+input[type="text"]:focus, select:focus {
+    border-color: #007bff; /* Blue border on focus */
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3); /* Blue glow effect */
+}
+
+/* Label Styling */
+label {
+    font-weight: bold;
+    color: #333; /* Darker color for label */
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Row Spacing */
+.row {
+    margin-bottom: 20px; /* Spacing between rows */
+}
+
+/* Button Styling */
+button.btn-primary {
+    background-color: #007bff; /* Standard Bootstrap primary color */
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+button.btn-primary:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+button.btn-primary:focus {
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); /* Blue glow on focus */
+}
+
+/* Extra Styling for Larger Screens */
+@media (min-width: 768px) {
+    form {
+        max-width: 800px;
+        margin: 0 auto; /* Center the form on larger screens */
+    }
+}

@@ -1,0 +1,44 @@
+.image-container {
+    display: flex; /* Enable flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    position: relative; /* Position relative for the overlay */
+    width: 100%; /* Adjust as needed */
+    max-width: auto; /* Optional: set a max width for your image */
+    margin: 0 auto; /* Center the container itself */
+}
+
+.shop-image {
+    width: 100%; /* Full width of the container */
+    height: auto;
+    opacity: 0.7; /* Image opacity */
+    border-radius: 25px; /* Rounded corners */
+    border: 2px solid rgba(238, 251, 255, 1); /* Border color */
+    padding: 15px; /* Padding around the image */
+}
+
+/* Green curtain overlay */
+.image-container::before {
+    content: ''; /* Necessary for the pseudo-element */
+    position: absolute; /* Positioning for the overlay */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 128, 0, 0.2); /* Green with 50% transparency */
+    border-radius: 25px; /* Match border radius of the image */
+    z-index: 1; /* Ensure the curtain is on top of the image */
+}
+
+.shop-title {
+    position: absolute; /* Positioning for the title */
+    top: 50%;  /* Center vertically */
+    left: 13%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Ensure perfect centering */
+    color: blue; /* Choose a color that contrasts with the image */
+    font-size: 40px; /* Adjust the text size as needed */
+    font-weight: bold; /* Make text bold */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add some shadow for better visibility */
+    opacity: 1; /* Text opacity */
+    z-index: 2; /* Ensure the text is above the curtain */
+}

@@ -1,0 +1,22 @@
+/* Default navbar link styling */
+.navbar-nav .nav-link {
+    color: #333; /* Default link color */
+    font-weight: bold; /* Bold text for emphasis */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effects */
+    padding: 10px 15px; /* Increase padding for better clickability */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Hover state */
+.navbar-nav .nav-link:hover {
+    color: #ffffff; /* Text color on hover */
+    background-color: #ff6f61; /* Beautiful soft red background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add subtle shadow for depth */
+}
+
+/* Active state (current page link) */
+.navbar-nav .nav-item.active .nav-link {
+    background-color: #3e976e; /* Different color to indicate the active page */
+    color: #fff; /* White text for active link */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* Subtle shadow for active link */
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Filter</title>
+
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link href="{% static 'sell/css/shop.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'sell/css/shop_title.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'sell/css/navbar_shop_list.css' %}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="container mt-1">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <h5><a class="nav-link" href="{% url 'vehicle_shop' %}">Home <span class="sr-only"></span></a></h5>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'filter_shop' %}">Filter</a>
+                    </li>
+
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">
+                            <i class="fas fa-sign-in-alt"></i> Login
+                        </a>
+                    </li>
+                    {% endif %}
+
+                    {% if user.is_superuser %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'filter_list' %}">Admin</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+    </nav>
+
+    <!-- Main content -->
+    <div class="container mt-5">
+        <h1 class="mb-4">Filter Vehicles</h1>
+
+        <!-- Filter Form -->
+        <form method="GET" action="">
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label for="word_contains" class="form-label">Part of title</label>
+                    <input type="text" class="form-control" id="word_contains" name="word_contains"
+                           placeholder="Search for vehicle" value="{{ request.GET.word_contains }}">
+                </div>
+                <div class="col-md-4">
+                    <label for="word_exact" class="form-label">Exact title</label>
+                    <input type="text" class="form-control" id="word_exact" name="word_exact"
+                           placeholder="Exact vehicle name" value="{{ request.GET.word_exact }}">
+                </div>
+                <div class="col-md-4">
+                    <label for="comment_price_year_old" class="form-label">Price, Year, Condition or Comment</label>
+                    <input type="text" class="form-control" id="comment_price_year_old" name="comment_price_year_old"
+                           placeholder="Search by price, year, or condition" value="{{ request.GET.comment_price_year_old }}">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Filter</button>
+        </form>
+
+        <!-- Filtered Vehicle List -->
+        <div class="vehicle-grid mt-5">
+            {% if queryset %}
+                {% for vehicle in queryset %}
+                    <div class="vehicle-card mb-3" style="border: 1px solid #ccc; padding: 15px; border-radius: 8px;">
+                        <a href="{% url 'vehicle_detail' vehicle.id %}" style="text-decoration: none; color: inherit;">
+                            <h3>{{ vehicle.vehicle }}</h3>
+                            <p><strong>Year:</strong> {{ vehicle.produce_year }}</p>
+                            <p><strong>Price:</strong> ${{ vehicle.price }}</p>
+                            <p><strong>Description:</strong> {{ vehicle.description|truncatewords:5 }}</p>
+                            <p><strong>Condition:</strong> {{ vehicle.new_old }}</p>
+                        </a>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>No vehicles found.</p>
+            {% endif %}
+        </div>
+
+    </div>
+{% include 'sell/footer.html' %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+.vehicle-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Smaller card width (200px) */
+    gap: 12px; /* Reduced space between cards */
+    padding: 12px; /* Reduced padding around the grid */
+    background-color: #3e976e; /* Keep the background color for the grid */
+    border-radius: 8px;
+}
+
+.vehicle-card {
+    border: 1px solid #ccc;
+    border-radius: 6px; /* Reduced corner radius */
+    overflow: hidden;
+    background-color: rgba(238, 251, 255, 1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px; /* Reduced padding inside the card */
+    text-align: center;
+}
+
+.vehicle-image img {
+    width: 100%;
+    height: auto;
+    max-height: 150px; /* Set a maximum height for images to keep them smaller */
+}
+
+.vehicle-actions {
+    margin-top: 10px; /* Reduced space above buttons */
+}
+
+.vehicle-details {
+    background-color: rgba(238, 251, 255, 1);
+}
+
+/* Responsive behavior */
+@media (max-width: 600px) {
+    .vehicle-grid {
+        grid-template-columns: 1fr; /* Stack cards vertically on smaller screens */
+    }
+}

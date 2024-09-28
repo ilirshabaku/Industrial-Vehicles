@@ -1,0 +1,73 @@
+* {
+background-color: #f0f8ff;
+}
+
+body {
+background-color: #f0f8ff;
+}
+
+nav {
+background-color: #f0f8ff;
+}
+
+
+.container {
+background-color: #f0f8ff;
+}
+
+body {
+
+    font-family: 'Arial', sans-serif; /* Default font for the page */
+}
+
+/* Container background */
+.container {
+    max-width: 1300px;
+    background-color: #ffffff;  /* White for contrast */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);  /* Soft shadow for depth */
+    margin-bottom: 50px;
+}
+
+/* Table styling */
+.table {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    color: #212529;
+    background-color: #fdfdfe;  /* Subtle off-white */
+    border-color: #dee2e6;
+}
+
+/* Table Key */
+.table-key {
+    width: 25%;
+    background-color: #007bff;  /* Bright blue */
+    color: white;
+    font-weight: bold;
+    vertical-align: middle;
+    padding: 12px;
+    font-family: 'Arial', sans-serif; /* Keep default font for keys */
+}
+
+/* Table Value with new font */
+.table-value {
+    width: 50%;
+    background-color: #e9ecef;  /* Light grey */
+    color: #212529;
+    padding: 12px;
+    font-family: 'Georgia', serif;  /* New font for values */
+    fon
+
+/* css/shop.css */
+.welcome-user {
+    color: #b2ffff; /* Celeste color */
+}
+
+.shop-title {
+    color: #b2ffff; /* Celeste color */
+}
+
+.vehicle-details h3, .vehicle-details p {
+    color: #b2ffff; /* Celeste color */
+}

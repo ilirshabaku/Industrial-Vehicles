@@ -1,0 +1,7 @@
+body {
+    background-image: url('static/images/agriculture.jpg');
+    /* Other properties you might want to include */
+    background-size: cover; /* or contain, depending on your needs */
+    background-repeat: no-repeat; /* prevents the image from repeating */
+    background-position: center; /* positions the image */
+}
