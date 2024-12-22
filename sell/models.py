@@ -15,7 +15,7 @@ class Vehicles(models.Model):
         ('new', 'new'),
         ('old', 'old'),
     ]
-    new_old = models.CharField( max_length=30, choices=new_CHOICES, default='new')
+    new_old = models.CharField( max_length=3, choices=new_CHOICES, default='new')
 
     time_created = models.DateTimeField(auto_now_add=True)
     amount = models.IntegerField(default=1)

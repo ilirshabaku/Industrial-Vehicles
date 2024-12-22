@@ -58,6 +58,7 @@
             <th>Horsepower</th>
             <th>Description</th>
             <th>Image</th>
+            <th>Time created</th>
             <th>Info</th>
             <th>Edit</th>
             <th>Delete</th>
@@ -72,6 +73,7 @@
             <td>{{ vehicle.horsepower }}</td>
             <td>{{ vehicle.description|truncatewords:3 }}</td>
             <td>{% if vehicle.image %}<img src="{{ vehicle.image.url }}" width="50px" alt="Vehicle"/>{% else %}No Image{% endif %}</td>
+            <td>{{ vehicle.time_created }}</td>
             <td><a href="{% url 'vehicle_detail' vehicle.id %}" class="btn btn-info">Info</a></td>
             <td><a href="{% url 'update_vehicle' vehicle.id %}" class="btn btn-warning">Edit</a></td>
             <td><a href="{% url 'delete_vehicle' vehicle.id %}" class="btn btn-danger">Delete</a></td>
